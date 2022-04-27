@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超市会员积分系统</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrapValidator.css">
+    <style>
+    .form-control{
+      font-weight: 500;
+    }
+      .control-label img{
+        width: 80%;
+    }
+     .help-block{
+        margin-left: 34px;
+    }
+    .has-feedback .form-control-feedback{
+        top: 0!important;
+        right: 12px!important;
+    }
+     .code {
+        font-style: italic;
+        color: blue;
+        font-size: 21px;
+        border: 0;
+        padding: 2px 3px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        float: right;
+        cursor: pointer;
+        width: 75px;
+        height: 38px;
+        text-align: center;
+        vertical-align: middle;
+ animation:change 6s linear 0s infinite;
+ font-weight:700;
+ 
+    }
+ @keyframes change{0% {color:#333;}25%{color:#009988;}50%{color:#f60;}75%{color:#cf0;}100%{color:#f00;}}
+    a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #288bc4;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+<body onload="createCode()">
+    <section class="material-half-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="login-content">
+      <div class="logo">
+        <img src="./images/logos.webp" style="height: 80px;height: 120px;" alt="">
+      </div>
+
+      <div class="login-box" style="height: 444px;">
+        <form id="defaultForm" method="POST" class="login-form">
+            <div class="alert alert-success" style="display: none;"></div>
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+
+          <div class="animated-checkbox" style="margin-bottom:15px;margin-left:25px;">
+                            <label for="role" style="width: 103px;"></label>
+                            <label for="role">
+                                <select class="form-control" id="roleChoose" name="brand" style="width:200px;padding:0 12px">
+                                    <option value="普通会员">普通会员</option>
+                                    <option value="收银员" >收银员</option>
+                                    <option value="管理员" >管理员</option>
+                                </select>
+                            </label> 
+                        </div>
+
+
+          <div class="form-group">
+            <label class="control-label"><img src="images/icon_03.png" alt=""></label>
+            <label for=""><input class="form-control" id="userTele"  type="text" name="phone" placeholder="请输入账号(手机号)" ></label>
+          </div>
+          <div class="form-group">
+            <label class="control-label"><img src="images/icon_12.png" alt=""></label>
+            <label for=""><input class="form-control" id="password" type="password" name="password" placeholder="请输入密码"></label>
+          </div>
+           <div class="form-group" style="height: 35px;">
+               <label class="control-label" style="position: absolute"><img src="images/icon_06.png" alt=""></label>
+            <label for="" style="float: left;margin-left: 25px;"><input class="form-control" id="code" type="code" name="code" style="width: 162px;" placeholder="请输入验证码"></label>
+            <label style="position: absolute;"><div class="code" id="checkCode" onclick="createCode()"></div></label> 
+          </div>
+         
+          <div class="form-group">
+            <div class="col-lg-9 col-lg-offset-3"></div>
+            <button type="button" name="submit" id="sginIn" class="btn btn-primary btn-block"><i id="sginIn" class="fa fa-sign-in fa-lg fa-fw"></i>用户登录</button>
+           
+          </div>
+             <div style="float:right"><span>没有账号？</span><a href="register.html">去注册</a></div>
+
+          </div>
+        </form>
+        
+      </div>
+    </section>
+
+
+ 
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <!-- The javascript plugin to display page loading on top-->
+    <!-- <script src="js/plugins/pace.min.js"></script> -->
+    <script src="js/bootstrapValidator.js"></script>
+     <script src="js-2/bootstrap-notify.min.js"></script>
+    <!-- <script src="js/loginreg/login.js"></script> -->
+    <script src="js-2/userLogin.js"></script>
+    <script src="js-2/storage.js"></script>
+    <!-- <script src="js/loginreg/login.js"></script> -->
+    <script type="text/javascript">
+        // Login Page Flipbox control
+        $('.login-content [data-toggle="flip"]').click(function () {
+            // $('.login-box').toggleClass('flipped');
+            // return false;
+        });
+    </script>
+    <script>
+      var code;
+
+    function createCode() {
+        code = "";
+        var codeLength = 4; //验证码的长度
+        var checkCode = document.getElementById("checkCode");
+        var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+            'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+        for (var i = 0; i < codeLength; i++) {
+            var charNum = Math.floor(Math.random() * 52);
+            code += codeChars[charNum];
+        }
+        if (checkCode) {
+            checkCode.className = "code";
+            checkCode.innerHTML = code;
+        }
+    }
+    </script>
+</body>
+</html>

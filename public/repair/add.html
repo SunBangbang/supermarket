@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>超市会员管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/repair/repairadd.css">
+    <link rel="stylesheet" type="text/css" href="../public/button/button.css">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="../public/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="add.html">管理首页</a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search">
+          <button class="app-search__button"><i class="fa fa-search"></i></button>
+        </li>
+        <!--Notification Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">标题</li>
+            <div class="app-notification__content">
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">信息1</p>
+                    <p class="app-notification__meta">2分钟前</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">信息2</p>
+                    <p class="app-notification__meta">5分钟前</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">信息3</p>
+                    <p class="app-notification__meta">10分钟前</p>
+                  </div></a></li>
+              <div class="app-notification__content">
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">信息4</p>
+                      <p class="app-notification__meta">15分钟前</p>
+                    </div></a></li>
+               
+              </div>
+            </div>
+            <li class="app-notification__footer"><a href="#">点击查看全部</a></li>
+          </ul>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown" ><a class="app-nav__item" data-toggle="dropdown" aria-label="Open Profile Menu"><i style="color:#fff" class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> 设置</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> 个人资料</a></li>
+            <li id="quit_log"><a class="dropdown-item"><i class="fa fa-sign-out fa-lg"></i> 登出</a></li>
+      </ul>
+    </header>
+    <!-- 左侧导航 -->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+ <aside class="app-sidebar">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../images/user.png" alt="User Image">
+        <div id="appenduser">
+         
+        </div>
+      </div>
+            <ul class="app-menu">
+         <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i><span class="app-menu__label">积分兑换</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+        
+            <li><a style="background: #0d1214" class="treeview-item" href="" rel="noopener"><i class="icon fa fa-circle-o"></i>添加订单</a>
+            </li>
+          </ul>
+        </li>
+    
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks" aria-hidden="true"></i><span class="app-menu__label">兑换信息</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+
+            <li><a class="treeview-item" href="user_untreated.html" rel="noopener"><i class="icon fa fa-circle-o"></i>未处理</a>
+             
+            </li>
+            <li><a class="treeview-item" href="user_continue.html"><i class="icon fa fa-circle-o"></i>进行中</a></li>
+            <li><a class="treeview-item" href="user_completed.html" target="_blank"><i class="icon fa fa-circle-o"></i>已完成</a></li>
+            <li><a class="treeview-item" href="user_history.html"><i class="icon fa fa-circle-o"></i>历史订单</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1>
+                    <i class="fa fa-dashboard"></i>添加订单</h1>
+                <p></p>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home fa-lg"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../user.html">返回上一级</a>
+                </li>
+            </ul>
+        </div>
+         <div class="tile">
+            <div class="row">
+                <div class="col-lg-6" style="margin-left: 50px;">
+                    
+                    <form id="prosave" action = "/api/product/save" method="post" enctype="multipart/form-data">
+
+                        <div class="animated-checkbox">
+                            <label for=""  style="width: 103px;"><span>*</span> 品牌类型：</label>
+                            <label for="">
+                                <select class="form-control" id="brandtel" name="brand" style="width: 380px;">
+                                   <option value="海尔">海尔</option>
+                                   <option value="美的">美的</option>
+                                   <option value="格力">格力</option>
+                                   <option value="海信">海信</option> 
+                                   <option value="puma">puma</option> 
+                                </select>
+                            </label> 
+                        </div>
+                         <div class="animated-checkbox">
+                            <label for=""  style="width: 103px;"><span>*</span> 类型：</label>
+                            <label for="">
+                                <select class="form-control" id="faulttel" name="faulttype" style="width: 380px;">
+                                    <option value="食品类">食品类</option>
+                                    <option value="家具类">家具类</option>
+                                    <option value="服装类">服装类</option>
+                                    <option value="化妆品">化妆品</option>
+                                </select>
+                            </label> 
+                        </div>
+                        <div class="form-group" style="position: relative;padding-top: 15px;padding-bottom: 100px;">
+                              <label for=""><span>*</span> 商品申请理由：</label>
+                         
+                            <label for="" style="position: absolute;"><textarea style="resize: inherit;" class="form-control" id="exampleTextarea" name="describle" cols="50" rows="5" placeholder="请输入申请理由..."></textarea></label>
+                        </div>
+                         <div class="form-group" style="width: 600px;">
+                            <label for="" style="width: 103px;"><span>*</span> 申请人：</label>
+                            <label for=""><input style="width: 400px;" class="form-control" id="exampleInputEmail1" name="repairman" type="text" aria-describedby="emailHelp" placeholder="申请姓名"></label>
+                            
+                        </div>
+                        <div class="form-group" style="width: 600px;">
+                            <label for=""  style="width: 103px;"><span>*</span> 详细地址：</label>
+                            <label for=""><input style="width: 400px;" class="form-control"  name="address" type="text" aria-describedby="emailHelp" placeholder="请输入详细地址"></label>
+                            
+                        </div>
+                        
+                        <div class="form-group" style="width: 600px;">
+                            <label for="" style="width: 103px;"><span>*</span> 联系方式：</label>
+                            <label for=""><input style="width: 400px;" class="form-control" id="exampleInputPassword1" name="phone" type="text" placeholder=""></label>
+                        </div>
+                        
+                        <div class="form-group" >
+                            <label for="exampleInputFile"><span>*</span>添加商品图片：</label>
+                            <label for=""><input class="form-control-file" id="exampleInputFile" type="file" name="faultimg" aria-describedby="fileHelp"></label>  
+                        </div>
+                        <input type="hidden" name="state" value="0">
+                        <input type="hidden" name="ret" value="0">
+                        <a href="#" id="demoSwal" class="button btn btn-info button-royal button-rounded button-large">立即兑换</a>
+                       
+                    </form>
+                </div>
+            </div>
+         </div>
+      
+      
+    </main>
+    
+    <!-- Essential javascripts for application to work-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js-2/isSignOut.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="../js/plugins/pace.min.js"></script>
+    <script src="../js/plugins/sweetalert.js"></script>
+    <script src="../js/jquery.form.min.js"></script>
+    <script src="../js/user/add.js"></script>
+    <script src="../js/template-web.js"></script>
+ 
+    <!-- Page specific javascripts-->
+    <script>
+        $('.bs-component [data-toggle="popover"]').popover();
+        $('.bs-component [data-toggle="tooltip"]').tooltip();
+    </script>
+
+    <script id="brand" type="text/html">
+        {{each data}}
+            <option value="{{$value.brandName}}">{{$value.brandName}}</option>
+        {{/each}}
+    </script>
+    <script id="fault" type="text/html">
+        {{each data}}
+            <option value="{{$value.faultName}}">{{$value.faultName}}</option>
+        {{/each}}
+    </script>
+    <!-- Google analytics script-->
+    <script type="text/javascript">
+        if (document.location.hostname == 'pratikborsadiya.in') {
+            (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-72504830-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script type="text/javascript">
+  
+    //   $("#exampleInputPassword1").css("disabled")
+        $('#demoNotify').click(function () {
+            $.notify({
+                title: "Update Complete : ",
+                message: "Something cool is just updated!",
+                icon: 'fa fa-check'
+            }, {
+                    type: "info"
+                });
+        });
+        $('#demoSwal').click(function () {
+            swal({
+                title: "确定兑换？",
+                text: "是否立即处理？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonText: "确定",
+                cancelButtonText: "取消",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function (isConfirm) {
+                if (isConfirm) {
+                 
+                        var options = {
+                            "success": (result, status) => {
+                                if (result.ret) {
+                                    $(".close").on("click", () => {
+                                        window.location.reload();
+                                    });
+                                }
+                            },
+                            "resetForm": true,
+                            "dataType": "json"
+                        };
+                        $("#prosave").ajaxSubmit(options)
+                    
+                    swal("申请成功！", "我们将火速为您处理！", "success");
+                } else {
+                    
+                    swal("申请失败！", "兑换的人太多，请重新兑换！", "error");
+                }
+            });
+        });
+        
+    </script>
+    <div class="sweet-overlay" tabindex="-1" style="opacity: 1.1; display: none;"></div>
+   <div class="sweet-alert hideSweetAlert" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: none; margin-top: -157px; opacity: -0.03;"><div class="sa-icon sa-error" style="display: block;">
+      <span class="sa-x-mark">
+        <span class="sa-line sa-left"></span>
+        <span class="sa-line sa-right"></span>
+      </span>
+    </div><div class="sa-icon sa-warning" style="display: none;">
+      <span class="sa-body"></span>
+      <span class="sa-dot"></span>
+    </div>
+    <div class="sa-icon sa-info" style="display: none;"></div>
+    <div class="sa-icon sa-success" style="display: none;">
+      <span class="sa-line sa-tip"></span>
+      <span class="sa-line sa-long"></span>
+
+      <div class="sa-placeholder"></div>
+      <div class="sa-fix"></div>
+    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Cancelled</h2>
+    <p style="display: block;">Your imaginary file is safe :)</p>
+    <fieldset>
+      <input type="text" tabindex="3" placeholder="">
+      <div class="sa-input-error"></div>
+    </fieldset><div class="sa-error-container">
+      <div class="icon">!</div>
+      <p>Not valid!</p>
+    </div><div class="sa-button-container">
+      <button class="cancel" tabindex="2" style="display: none; box-shadow: none;">Cancel</button>
+      <div class="sa-confirm-button-container">
+        <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">OK</button><div class="la-ball-fall">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div></div>
+</body>
+</html>

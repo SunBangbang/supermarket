@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>超市会员管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link href="../js-2/test/style.css" rel="stylesheet" />
+    <link href="../css/alert.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/repair/repairadd.css">
+    <link rel="stylesheet" type="text/css" href="../public/button/button.css">
+
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="../public/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header">
+        <a class="app-header__logo" href="faulttype.html">管理首页</a>
+        <!-- Sidebar toggle button-->
+        <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+            <li class="app-search">
+                <input class="app-search__input" type="search" placeholder="Search">
+                <button class="app-search__button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </li>
+            <!--Notification Menu-->
+            <li class="dropdown">
+                <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications">
+                    <i class="fa fa-bell-o fa-lg"></i>
+                </a>
+                <ul class="app-notification dropdown-menu dropdown-menu-right">
+                    <li class="app-notification__title">标题</li>
+                    <div class="app-notification__content">
+                        <li>
+                            <a class="app-notification__item" href="javascript:;">
+                                <span class="app-notification__icon">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </span>
+                                <div>
+                                    <p class="app-notification__message">信息1</p>
+                                    <p class="app-notification__meta">2分钟前</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="app-notification__item" href="javascript:;">
+                                <span class="app-notification__icon">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                        <i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </span>
+                                <div>
+                                    <p class="app-notification__message">信息2</p>
+                                    <p class="app-notification__meta">5分钟前</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="app-notification__item" href="javascript:;">
+                                <span class="app-notification__icon">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                        <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </span>
+                                <div>
+                                    <p class="app-notification__message">信息3</p>
+                                    <p class="app-notification__meta">10分钟前</p>
+                                </div>
+                            </a>
+                        </li>
+                        <div class="app-notification__content">
+                            <li>
+                                <a class="app-notification__item" href="javascript:;">
+                                    <span class="app-notification__icon">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </span>
+                                    <div>
+                                        <p class="app-notification__message">信息4</p>
+                                        <p class="app-notification__meta">15分钟前</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </div>
+                    </div>
+                    <li class="app-notification__footer">
+                        <a href="#">点击查看全部</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- User Menu-->
+            <li class="dropdown" ><a class="app-nav__item" data-toggle="dropdown" aria-label="Open Profile Menu"><i style="color:#fff" class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> 设置</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> 个人资料</a></li>
+            <li id="quit_log"><a class="dropdown-item"><i class="fa fa-sign-out fa-lg"></i> 登出</a></li>
+          </ul>
+        </li>
+        </ul>
+    </header>
+    <!-- 左侧导航 -->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user">
+            <img class="app-sidebar__user-avatar" src="../images/user.png" alt="User Image">
+            <div id="appenduser">
+            
+            </div>
+        </div>
+            <ul class="app-menu">
+    
+        <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks" aria-hidden="true"></i><span class="app-menu__label">维修任务</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="../repair/admin_untreated.html"  rel="noopener"><i class="icon fa fa-circle-o"></i>未处理<b>0</b></a>
+             
+            </li>
+            <li><a class="treeview-item" href="../repair/admin_continue.html" ><i class="icon fa fa-circle-o"></i>进行中<b>0</b></a></li>
+            <li><a class="treeview-item" href="../repair/admin_completed.html" ><i class="icon fa fa-circle-o"></i> 已完成<b>0</b></a></li>
+            <li><a class="treeview-item" href="../repair/admin_history.html" ><i class="icon fa fa-circle-o"></i>历史任务</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fa fa-users" aria-hidden="true"></i><span class="app-menu__label">人员管理</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="../user/admin_user.html"><i class="icon fa fa-circle-o"></i>用户</a></li>
+            <li><a class="treeview-item" href="../user/admin_repairman.html"><i class="icon fa fa-circle-o"></i>维修人员</a></li>
+          </ul>
+        </li>
+        
+        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa  fa-product-hunt" aria-hidden="true"></i><span class="app-menu__label">产品管理</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="brand.html"><i class="icon fa fa-circle-o"></i>品牌类型</a></li>
+            <li><a style="background: #0d1214" class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>商品类型</a></li>         
+          </ul>
+        </li>
+       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-recycle" aria-hidden="true"></i><span class="app-menu__label">备件管理</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="parts.html"><i class="icon fa fa-circle-o"></i>添加备件</a></li>         
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1>
+                    <i class="fa fa-dashboard"></i>商品类型</h1>
+                <p></p>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home fa-lg"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../administrator.html">返回上一级</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tile mb-4" style="height:60px;position:relative;margin-bottom:-0.5em!important;">
+            <a class="button button-action" id="addButton" data-toggle="modal" data-target="#myModal" style="background: #009988; position: absolute;top: -30px;right: 0px;color: #fff">添加商品类型</a>
+        </div>
+                <div class="row" style="margin-top: 0px;">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div class="tile-body">
+                        <div id="sampleTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+        
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-hover table-bordered dataTable no-footer" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+                                        <thead>
+                                            <tr role="row">
+                                                
+                                               
+                                                <th class="sorting" tabindex="0" aria-controls="sampleTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending"
+                                                    style="width: 85px;">名称</th>
+                                                <th class="sorting" tabindex="0" aria-controls="sampleTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending"
+                                                    style="width: 107.5px;">添加时间</th>
+                                                <th class="sorting" tabindex="0" aria-controls="sampleTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending"
+                                                    style="width: 90.5px;">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="faultList">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script id="faultFind" type="text/html">
+            {{each result}}
+                 <tr role="row" class="odd">
+                    <td>{{$value.faultName}}</td>
+                    <td>{{$value.createTime}}</td>
+                    <td class="flag">                                                  
+                        <button style="padding:4px 6px; line-height: 14px;" class="button button-primary button-border button-rounded button-tiny button-caution demoslice fault_remove" faultid="{{$value._id}}">
+                            <i class="fa fa-trash-o"></i>删除</button>
+                    </td>
+                </tr>
+            {{/each}}
+        </script>
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="../js/plugins/pace.min.js"></script>
+    <!-- Page specific javascripts-->
+    <script src="../js/jquery.datatable.js"></script>
+    <script src="../js/datatable.boot.js"></script>
+    <script src="../js/datapicker.js"></script>
+    <script src="../js/select2.js"></script>
+    <script src="../js/plugins/sweetalert.js"></script>
+    <script src="../js-2/faulttype.js"></script>
+    <script src="../js/template-web.js"></script>
+    <script src="../js-2/isSignOut.js"></script>
+    <script src="../js-2/test/bootstrap-notify.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // console.log(100);
+            $("#sampleTable").DataTable();
+        })    
+    </script>
+    <!-- <script type="text/javascript">$('#sampleTable').DataTable();</script> -->
+    <script>
+        $('.bs-component [data-toggle="popover"]').popover();
+        $('.bs-component [data-toggle="tooltip"]').tooltip();
+    </script>
+    <!-- Google analytics script-->
+    <script type="text/javascript">
+        if (document.location.hostname == 'pratikborsadiya.in') {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-72504830-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script type="text/javascript">
+        if (document.location.hostname == 'pratikborsadiya.in') {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-72504830-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+     <script>
+            // $(function(){
+                // $(".app-content").on("click",".demoslice-type",function(){
+                //     swal({ 
+                //             title: "确定删除该故障类型吗？", 
+                //             text: "你将无法恢复该故障类型！", 
+                //             type: "warning",
+                //             showCancelButton: true, 
+                //             confirmButtonColor: "#DD6B55",
+                //             confirmButtonText: "确定删除", 
+                //             cancelButtonText: "取消删除",
+                //             closeOnConfirm: false, 
+                //             closeOnCancel: false	
+                //             },
+                //             function(isConfirm){ 
+                //             if (isConfirm) { 
+                //                 console.log(1);
+                //             swal("删除！", "该故障类型已经被删除。","success"); 
+                //             } else { 
+                //                 console.log(2);
+                //             swal("取消！", "已取消删除该故障类型:)","error"); 
+                //             } 
+                //     });
+                    
+                // })
+                // $(".app-content").on("click",".demoslice-typechild",function(){
+                //     swal({ 
+                //             title: "确定删除该子类信息吗？", 
+                //             text: "你将无法恢复该子类信息！", 
+                //             type: "warning",
+                //             showCancelButton: true, 
+                //             confirmButtonColor: "#DD6B55",
+                //             confirmButtonText: "确定删除", 
+                //             cancelButtonText: "取消删除",
+                //             closeOnConfirm: false, 
+                //             closeOnCancel: false	
+                //             },
+                //             function(isConfirm){ 
+                //             if (isConfirm) { 
+                //                 console.log(1);
+                //             swal("删除！", "该子类信息已经被删除。","success"); 
+                //             } else { 
+                //                 console.log(2);
+                //             swal("取消！", "已取消删除该子类信息:)","error"); 
+                //             } 
+                //     });
+                    
+                // })
+               
+                   
+                // $(".app-content").on("click",".add_user",function(){
+                //     $("#myModalLabel").html("添加人员");
+                //     $("#phone").remove();
+                //     $("#user_phone").html(`<input style="width: 250px;" class="form-control" id="phone" type="text" aria-describedby="emailHelp"
+                //                         placeholder="请输入手机号">`);
+    
+                // })
+                // $(".app-content").on("click",".edit",function(){
+                //     $("#myModalLabel").html("编辑人员");
+                //     $("#phone").remove();
+                //     $("#user_phone").html(`18236572720`);
+    
+                // })
+            //}
+       
+        </script>
+        <!-- 添加故障类型 ！！！！！！！！！！！！！！！！！！！！！-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">
+                            添加商品类型
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                        </button>
+        
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                           
+                            <!-- <div class="form-group">
+                                <label for="" style="width: 85px;">
+                                    <span>*</span> 上级分类：&nbsp;</label>
+                                <label for="">
+                                    <select style="width: 250px;" class="form-control" id="exampleSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </label>
+                            </div> -->
+                           
+                          
+                            <div class="form-group">
+                                <label for="" style="width: 85px;">
+                                    <span>*</span> 商品类型：</label>
+                                <label for="">
+                                    <input style="width:250px;" class="form-control faultty_name" id="order" type="text" aria-describedby="emailHelp" placeholder="请输入商品类型">
+                                </label>
+                            </div>
+        
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="faultAdd" class="btn btn-primary" style="margin-right: 200px;">
+                            添加
+                        </button>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    
+</body>
+
+</html>

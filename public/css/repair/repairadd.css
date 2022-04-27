@@ -1,0 +1,13 @@
+.type{height:1rem;margin-top: 2rem;}
+.type label{float: left; margin-left: 2.5rem;}
+.type .input1{float: left;margin-left: 1rem;}
+.type .input1 input{padding-left: 1rem;}
+.type .input1 span{margin-right:1rem;}
+.tile{position: relative;}
+.describe{margin-bottom: .5rem;}
+.describe label{position: absolute;left: 2.5rem;top: 1rem;}
+.describe  textarea{margin-left: -7.9rem;margin-top: 1.2rem;}
+.add{display: block;width: 18.2rem;vertical-align: middle;background-color: #fff;height: 2rem;position: absolute;left: 6.95rem;}
+.tile a{margin: 2rem 0;margin-left: 0rem;}
+.type .pdi{margin-left: 4.3rem;margin-top: .4rem;}
+.address{margin-top: .4rem;}

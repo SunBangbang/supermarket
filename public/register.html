@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超市会员积分系统</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrapValidator.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+    .login-box input{
+        width: 313px;
+    }
+    .ifo{
+        width: 100px;
+        position: absolute;
+        right: 9px;
+        top: 0px;
+        background: #fff;
+        color: #333;
+        border-color: #ced4da;
+        padding-left: 23px;
+    }
+    .btn-block{
+        height: 50px;
+    }
+    .help-block{
+        margin-left: 34px;
+    }
+    .has-feedback .form-control-feedback{
+        top: 0!important;
+        right: 6px!important;
+    }
+    .control-label img{
+        width: 80%;
+    }
+    .ifo:focus{
+    border-color:#ced4da;
+    }
+    .form-control{
+        font-weight: 500;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="material-half-bg">
+        <div class="cover"></div>
+    </section>
+    <section class="login-content">
+        <div class="logo">
+            <img src="images/logos.webp" style="height: 120px;" alt="">
+        </div>
+        <div class="login-box" style="width: 430px;height: 600px;">
+            <form class="login-form" id="regform" >
+                <h3 class="login-head">
+                    <i class="fa fa-lg fa-fw fa-user"></i>REGISTER</h3>
+                <div class="form-group">
+                    <label class="control-label"><img src="images/icon_03.png" alt=""></label>
+                    <label for=""><input class="form-control"id="teleNumber" type="text" name="phone"  placeholder="请输入手机号" autofocus value=""></label>
+                </div>
+                <div class="form-group" style="position: relative;">
+                    <label class="control-label"><img src="images/icon_06.png" alt=""></label>
+                    <label for=""><input class="form-control" id="code" type="text" placeholder="请输入验证码"style = "width="271px;"" autofocus></label>
+                    <!-- <button class="btn btn-primary btn-block ifo">点击发送</button> -->
+                    <input id="sendbtn" class="form-control ifo" type="button" style="width: 100px;border-color: none;" value="点击发送" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><img src="images/icon_09.png" alt=""></label>
+                    <label for=""><input class="form-control" id="nickname" type="text" name="username" placeholder="请输入昵称"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><img src="images/icon_12.png" alt=""></label>
+                    <label for=""><input class="form-control" id="password"type="password" name="password" placeholder="请输入密码"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><img src="images/icon_14.png" alt=""></label>
+                    <label for=""><input class="form-control" id="againpassword" type="password" name="password1" placeholder="请再次输入密码"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><img src="images/icon_16.png" alt=""></label>
+                    <label for=""><input class="form-control" id="email" type="text" name="email" placeholder="请输入邮箱帐号"></label>
+                </div>
+
+
+                <div class="form-group btn-container">
+                    <button class="btn btn-primary btn-block" id="register">
+                        <i class="fa fa-sign-in fa-lg fa-fw"></i>REGISTER</button>
+                </div>
+                <div style="margin-top:10px;float:right"><span>已有账号</span>&nbsp;&nbsp;<a href="login.html">去登录</a></div>
+            </form>
+        </div>
+    </section>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrapValidator.js"></script>
+    <script src="js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="js/plugins/pace.min.js"></script>
+    <!-- <script src="js/loginreg/reg.js"></script> -->
+    <script src="js-2/usersSignup.js"></script>
+    <script src="js-2/bootstrap-notify.min.js"></script>
+    <script type="text/javascript">
+        // Login Page Flipbox control
+        $('.login-content [data-toggle="flip"]').click(function () {
+            $('.login-box').toggleClass('flipped');
+            return false;
+        });
+    </script>
+
+</body>
+
+</html>
