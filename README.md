@@ -1,3 +1,3 @@
 # 超市后台管理系统
  
-vue+node+mongodb
+## vue+node+mongodb
